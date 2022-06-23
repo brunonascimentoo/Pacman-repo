@@ -26,9 +26,10 @@
     background-color: var(--colorPac-man);
     border-radius: 50%;
     position: absolute;
-    
+    animation:  comex 500ms linear infinite;
     
 }
+
 
 
 .eyes {
@@ -44,10 +45,10 @@
     content: '';
     position: absolute;
     left: 0;
-    top: 2px;
-    border-left: solid 7px var(--colorWhite);
-    border-bottom: solid 5px transparent;
-    border-top: solid 5px transparent;
+    top: 1px;
+    border-left: solid 5px var(--colorWhite);
+    border-bottom: solid 4px transparent;
+    border-top: solid 4px transparent;
 
 }
 
@@ -55,28 +56,46 @@
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    border-right: solid 100px var(--colorBlack);
+    border-right: solid 90px var(--colorBlack);
     border-bottom: solid 45px transparent;
     border-top: solid 45px transparent;
     position: absolute;
-
+    animation: open_close 0.4s infinite;
+    
 }
 
 .container .munch {
     margin: 0px 0px 0px 100px;
-    width: 10px;
-    height: 10px;
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background: var(--colorPac-man);
     position: absolute;
     box-shadow: 40px 0 0 var(--colorPac-man), 80px 0 0 var(--colorPac-man), 120px 0 0 var(--colorPac-man), 160px 0 0 var(--colorPac-man);
-    animation: right_to_left 0.4s infinite;
+    animation: right_to_left 0.4s linear infinite;
+
 }
 
 
 
 @keyframes right_to_left {
     100% {
-        margin-left:  -1px;
+        margin-left:  15px;
     } 
 }
+
+@keyframes open_close {
+    50% {
+        border-bottom: 0 solid var(--colorPac-man);
+        border-top: 0 solid var(--colorPac-man);
+        
+    }
+}
+
+@keyframes comex {
+    50% {
+        transform: rotate(-15deg);
+        transform: rotate(5deg);
+    }
+}
+
